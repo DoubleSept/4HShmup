@@ -5,6 +5,13 @@ const MAX_V_SPEED = 200.0
 const V_ACCELERATION = 10
 var height
 
+var shootResource = load("res://assets/Shoot.tscn")
+
+func onShoot():
+	var shoot = shootResource.instance()
+	shoot.position = position
+	get_node(".").get_parent().add_child(shoot)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	height = 75
@@ -33,7 +40,7 @@ func _process(delta):
 	if(position[1]>1080 - height && v_speed>0):
 		v_speed = 0
 	
-	var collision = move_and_collide(Vector2(0,v_speed))
+	var collision = move_and_collide(Vector2(0,v_speed))	
 	
-	if collision != null:
-		print("ACCIDENT")
+	if(Input.is_key_pressed(KEY_SPACE)):
+		onShoot()

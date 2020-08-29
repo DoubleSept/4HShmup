@@ -1,6 +1,7 @@
 extends Node2D
 
 var speed = 500
+# var explosionResource = load("res://assets/Explosion.tscn")
 
 func _ready():
 	$Polygon2D.color = Color(rand_range(0.5,1), rand_range(0.5,1), rand_range(0.5,1))
@@ -14,7 +15,10 @@ func _process(delta):
 	if(position[0] < -50):
 		get_parent().remove_child(self)
 
-
 func _on_Bad_Ship_body_entered(body):
 	print("Accident")
 	pass # Replace with function body.
+
+func onHit():
+	queue_free()
+	# TODO: add stupid explosion.
