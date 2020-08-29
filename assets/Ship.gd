@@ -3,10 +3,12 @@ extends Node2D
 var v_speed = 0.0
 const MAX_V_SPEED = 200.0
 const V_ACCELERATION = 10
+var height
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	height = 75
+	print("Height ", height)
 
 func _process(delta):
 	#INPUT MANAGEMENT
@@ -31,6 +33,6 @@ func _process(delta):
 		position = Vector2(position[0], 0)
 		v_speed = 0
 	
-	if(position[1]>1080 && v_speed>0):
-		position = Vector2(position[0], 1080)
+	if(position[1]>1080 - height && v_speed>0):
+		position = Vector2(position[0], 1080 - height)
 		v_speed = 0

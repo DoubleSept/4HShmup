@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/Flamme.gd" type="Script" id=2]
@@ -10,21 +10,29 @@ colors = PoolColorArray( 1, 0.9375, 0, 1, 1, 0, 0, 1 )
 gradient = SubResource( 1 )
 width = 256
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.2989, 24.9382 )
+
 [node name="Ship" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
-[node name="Collision" type="CollisionPolygon2D" parent="."]
-scale = Vector2( 0.258644, 0.251731 )
-polygon = PoolVector2Array( 99.6033, 45.5126, 212.251, 66.7711, 336.967, 118.736, 365.129, 150.034, 347.313, 180.74, 217.998, 233.887, 88.6834, 256.326, 124.891, 189.008, 185.813, 153.577, 126.616, 115.784 )
-
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 0.530327, 0.707104 )
 scale = Vector2( 0.258644, 0.251731 )
-polygon = PoolVector2Array( 366.208, 151.12, 347.521, 181.822, 218.041, 235.215, 85.892, 257.907, 124.602, 188.496, 184.67, 153.79, 127.272, 116.414, 96.5707, 42.9983, 214.037, 65.6905, 338.177, 119.084 )
+z_index = 5
+z_as_relative = false
+polygon = PoolVector2Array( 366.208, 151.12, 347.521, 181.822, 218.041, 235.215, 85.892, 257.907, 124.602, 188.496, 184.67, 153.79, 127.272, 116.414, 109.567, 74.0753, 96.5707, 42.9983, 214.037, 65.6905, 338.177, 119.084 )
 
 [node name="Flamme" type="Polygon2D" parent="Polygon2D"]
-z_index = -2
+z_index = 1
+z_as_relative = false
 color = Color( 0.992157, 0.992157, 0.992157, 1 )
 texture = SubResource( 2 )
 texture_offset = Vector2( 0.5, 0 )
 polygon = PoolVector2Array( 129.58, 111.749, 71.4414, 96.8874, 90.9823, 119.917, 37.5323, 113.422, 66.8436, 140.585, 30.0608, 150.624, 101.902, 166.568, 54.7742, 199.046, 108.224, 189.008, 99.0286, 212.628, 132.363, 197.865, 172.594, 168.93, 188.508, 151.226 )
 script = ExtResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 38.3519, 38.6492 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 3 )

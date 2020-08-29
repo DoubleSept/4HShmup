@@ -30,9 +30,9 @@ custom_colors/font_outline_modulate = Color( 1, 0.960784, 0, 1 )
 text = "Shoot!"
 
 [node name="Taunt" parent="Center" instance=ExtResource( 3 )]
-margin_left = 810.0
+margin_left = 622.0
 margin_top = 461.0
-margin_right = 1110.0
+margin_right = 1297.0
 margin_bottom = 619.0
 
 [node name="Ship" parent="." instance=ExtResource( 5 )]
