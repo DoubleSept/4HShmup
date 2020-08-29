@@ -1,5 +1,7 @@
 extends Node2D
 
+signal ennemyDied
+
 var speed = 1000
 # var explosionResource = load("res://assets/Explosion.tscn")
 
@@ -20,6 +22,7 @@ func _on_Bad_Ship_body_entered(body):
 		return
 
 	if("Shoot" in body.name):
+		emit_signal("ennemyDied")
 		get_parent().remove_child(self)
 
 	print("Accident", body.name)

@@ -16,7 +16,12 @@ func _ready():
 
 func _on_Timer_timeout():
 	var taunt = taunt_list[randi() % taunt_list.size()]
-	$Text.text = taunt
-	$Text.visible = true
+	$Taunt.text = taunt
+	$Score.visible = false
+	$Taunt.visible = true
 	yield(get_tree().create_timer(0.5), "timeout")
-	$Text.visible = false
+	$Taunt.visible = false
+	$Score.visible = true
+
+func setScore(score):
+	$Score.text = String(score)

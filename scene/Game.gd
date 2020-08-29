@@ -1,6 +1,8 @@
 extends Node2D
 
 var waitTime = 1
+var nbPerPop = 1
+var score = 0
 
 var ennemyResource = load("res://assets/Ennemy.tscn")
 
@@ -12,9 +14,17 @@ func _process(delta):
 	pass
 
 func _on_PopEnnemy_timeout():
-	var ennemy = ennemyResource.instance()
-	$Ennemies.add_child(ennemy)
-
+	for i in range(nbPerPop):
+		var ennemy = ennemyResource.instance()
+		ennemy.connect("ennemyDied", self, "_on_ennemy_died")
+		$Ennemies.add_child(ennemy)
 
 func _on_WavePopper_timeout():
-	$PopEnnemy.wait_time = $PopEnnemy.wait_time/2
+	if($PopEnnemy.wait_time > 0.1):
+		$PopEnnemy.wait_time = $PopEnnemy.wait_time/2
+	else:
+		nbPerPop = nbPerPop + 1
+		
+func _on_ennemy_died():
+	score = score + 1
+	$Taunt.setScore(score)
