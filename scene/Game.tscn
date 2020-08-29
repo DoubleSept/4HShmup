@@ -1,8 +1,38 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scene/Game.gd" type="Script" id=1]
+[ext_resource path="res://scene/Sky.gd" type="Script" id=1]
+[ext_resource path="res://scene/Game.gd" type="Script" id=2]
 
-[node name="Game" type="Node2D"]
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 2159610
+period = 2.0
+
+[sub_resource type="NoiseTexture" id=2]
+seamless = true
+noise = SubResource( 1 )
+
+[node name="Game" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="TextureRect" parent="."]
+modulate = Color( 0.278431, 0.909804, 1, 1 )
+light_mask = -2147483647
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 2 )
+expand = true
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Ennemies" type="Node2D" parent="."]
