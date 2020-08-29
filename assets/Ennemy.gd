@@ -16,7 +16,13 @@ func _process(delta):
 		get_parent().remove_child(self)
 
 func _on_Bad_Ship_body_entered(body):
-	print("Accident")
+	if(get_parent() == null):
+		return
+
+	if("Shoot" in body.name):
+		get_parent().remove_child(self)
+
+	print("Accident", body.name)
 	pass # Replace with function body.
 
 func onHit():

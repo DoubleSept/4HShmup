@@ -1,15 +1,14 @@
 extends KinematicBody2D
 
+var direction;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("CollisionShape2D").connect("body_enter", self, "onCollision")
+	direction = Vector2(80, rand_range(-20, 20))
 
 func _process(delta):
-	move_and_collide(Vector2(100, 0))
-
-func onCollision(body):
-	if (body.get_name() != "Bad Ship"):
-		return
+	rotate(0.6)
+	move_and_collide(direction)
 	
-	body.onHit()
+	if (position.x > 2000):
+		get_parent().remove_child(self)
