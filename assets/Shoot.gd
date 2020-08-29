@@ -4,7 +4,7 @@ var direction;
 var sprite;
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	direction = Vector2(rand_range(10, 40), rand_range(-5, 5))
+	direction = Vector2(rand_range(10, 40), rand_range(-2, 2))
 	sprite = get_node("Sprite")
 	
 func _process(delta):

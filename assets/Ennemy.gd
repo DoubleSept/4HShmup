@@ -24,10 +24,7 @@ func _on_Bad_Ship_body_entered(body):
 	if("Shoot" in body.name):
 		emit_signal("ennemyDied")
 		get_parent().remove_child(self)
-
-	print("Accident", body.name)
-	pass # Replace with function body.
+		body.get_parent().remove_child(body)
 
 func onHit():
 	queue_free()
-	# TODO: add stupid explosion.

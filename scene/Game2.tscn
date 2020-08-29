@@ -10,18 +10,18 @@ script = ExtResource( 4 )
 
 [node name="Sky" parent="." instance=ExtResource( 1 )]
 
-[node name="Taunt" parent="." instance=ExtResource( 3 )]
-use_top_left = true
-
 [node name="Ship" parent="." instance=ExtResource( 5 )]
 
 [node name="Ennemies" type="Node2D" parent="."]
+
+[node name="Taunt" parent="." instance=ExtResource( 3 )]
+use_top_left = true
 
 [node name="PopEnnemy" type="Timer" parent="."]
 autostart = true
 
 [node name="WavePopper" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 [connection signal="timeout" from="PopEnnemy" to="." method="_on_PopEnnemy_timeout"]
 [connection signal="timeout" from="WavePopper" to="." method="_on_WavePopper_timeout"]

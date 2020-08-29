@@ -3,7 +3,7 @@
 [ext_resource path="res://scene/Sky.gd" type="Script" id=1]
 
 [sub_resource type="OpenSimplexNoise" id=1]
-seed = 6442119
+seed = 773901
 period = 2.0
 
 [sub_resource type="NoiseTexture" id=2]
@@ -28,5 +28,4 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
-autostart = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

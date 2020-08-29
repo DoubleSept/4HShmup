@@ -9,9 +9,6 @@ var width
 var shootResource = load("res://assets/Shoot.tscn")
 
 func onShoot():
-	if(rand_range(0, 1) > 0.4):
-		return 0;
-
 	var shoot = shootResource.instance()
 	shoot.position = position + Vector2(width, height / 2)
 	get_node(".").get_parent().add_child(shoot)

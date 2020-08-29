@@ -24,4 +24,7 @@ func _on_Timer_timeout():
 	$Score.visible = true
 
 func setScore(score):
-	$Score.text = String(score)
+	$Score/Score.text = String(score)
+
+func setPopped(score):
+	$Score/Popped.text = String(score)
