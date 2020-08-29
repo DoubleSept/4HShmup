@@ -1,10 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Ennemy.gd" type="Script" id=1]
 
 [node name="Bad Ship" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2( 736.866, 396.849 )
-rotation = 3.14159
-scale = Vector2( 0.533333, 0.409938 )
+color = Color( 1, 0.345098, 0.345098, 1 )
 invert_border = 0.1
-polygon = PoolVector2Array( 366.208, 151.12, 347.521, 181.822, 291.736, 204.825, 218.041, 235.215, 85.892, 257.907, 124.602, 188.496, 184.67, 153.79, 127.272, 116.414, 96.5707, 42.9983, 214.037, 65.6905, 338.177, 119.084 )
+polygon = PoolVector2Array( 70.5735, 16.9201, 69.906, 28.2662, 41.207, 26.264, 51.8857, 41.6146, 18.5147, 40.9472, 16.5125, 28.2662, 0.494385, 19.5898, 15.845, 8.91104, 16.5125, -1.10026, 52.5531, -1.10026, 40.5396, 10.9133, 70.5735, 6.24136 )

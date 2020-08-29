@@ -1,8 +1,8 @@
 tool
-extends TextureRect
+extends Node2D
 
 func _ready():
-	pass
+	$Timer.start(0.1)
 
-func _process(delta):
-	texture.noise.seed = OS.get_ticks_msec()
+func _on_Timer_timeout():
+	$Texture.texture.noise.seed = OS.get_ticks_msec()
