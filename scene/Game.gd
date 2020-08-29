@@ -1,8 +1,5 @@
 extends Node2D
 
-
-
-
 var ennemyResource = load("res://assets/Ennemy.tscn")
 
 # Called when the node enters the scene tree for the first time.

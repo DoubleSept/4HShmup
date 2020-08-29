@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 var v_speed = 0.0
 const MAX_V_SPEED = 200.0
@@ -26,13 +26,14 @@ func _process(delta):
 			v_speed = v_speed + V_ACCELERATION*0.5*delta
 			if(v_speed > 0):
 				v_speed = 0
-	
-	move_local_y(v_speed)
-	
+				
 	if(position[1]<0 && v_speed<0):
-		position = Vector2(position[0], 0)
 		v_speed = 0
 	
 	if(position[1]>1080 - height && v_speed>0):
-		position = Vector2(position[0], 1080 - height)
 		v_speed = 0
+	
+	var collision = move_and_collide(Vector2(0,v_speed))
+	
+	if collision != null:
+		print("ACCIDENT")

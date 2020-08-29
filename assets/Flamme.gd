@@ -6,3 +6,4 @@ func _ready():
 
 func _process(delta):
 	texture_offset = Vector2(rand_range(0,1), 0)
+	texture.gradient.colors[1] = Color(rand_range(0,1),rand_range(0,1),rand_range(0,1))

@@ -30,9 +30,9 @@ custom_colors/font_outline_modulate = Color( 1, 0.960784, 0, 1 )
 text = "Shoot!"
 
 [node name="Taunt" parent="Center" instance=ExtResource( 3 )]
-margin_left = 622.0
+margin_left = 585.0
 margin_top = 461.0
-margin_right = 1297.0
+margin_right = 1335.0
 margin_bottom = 619.0
 
 [node name="Ship" parent="." instance=ExtResource( 5 )]
@@ -40,6 +40,6 @@ margin_bottom = 619.0
 [node name="Ennemies" type="Node2D" parent="."]
 
 [node name="PopEnnemy" type="Timer" parent="."]
-wait_time = 0.8
+wait_time = 0.5
 autostart = true
 [connection signal="timeout" from="PopEnnemy" to="." method="_on_PopEnnemy_timeout"]

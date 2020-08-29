@@ -1,7 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/Ship.gd" type="Script" id=1]
 [ext_resource path="res://assets/Flamme.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.244898 )
+colors = PoolColorArray( 0.238281, 0.238281, 0.238281, 1, 0.75, 0.75, 0.75, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 0.9375, 0, 1, 1, 0, 0, 1 )
@@ -21,6 +28,7 @@ position = Vector2( 0.530327, 0.707104 )
 scale = Vector2( 0.258644, 0.251731 )
 z_index = 5
 z_as_relative = false
+texture = SubResource( 5 )
 polygon = PoolVector2Array( 366.208, 151.12, 347.521, 181.822, 218.041, 235.215, 85.892, 257.907, 124.602, 188.496, 184.67, 153.79, 127.272, 116.414, 109.567, 74.0753, 96.5707, 42.9983, 214.037, 65.6905, 338.177, 119.084 )
 
 [node name="Flamme" type="Polygon2D" parent="Polygon2D"]
