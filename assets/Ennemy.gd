@@ -1,6 +1,6 @@
 extends Node2D
 
-var speed = 500
+var speed = 1000
 # var explosionResource = load("res://assets/Explosion.tscn")
 
 func _ready():

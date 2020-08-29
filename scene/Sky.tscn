@@ -3,7 +3,7 @@
 [ext_resource path="res://scene/Sky.gd" type="Script" id=1]
 
 [sub_resource type="OpenSimplexNoise" id=1]
-seed = 5252866
+seed = 6442119
 period = 2.0
 
 [sub_resource type="NoiseTexture" id=2]

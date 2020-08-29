@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var v_speed = 0.0
 const MAX_V_SPEED = 200.0
-const V_ACCELERATION = 10
+const V_ACCELERATION = 50
 var height
 
 var shootResource = load("res://assets/Shoot.tscn")
@@ -20,9 +20,9 @@ func _ready():
 func _process(delta):
 	#INPUT MANAGEMENT
 	if(Input.is_action_pressed("ui_down")):
-		v_speed = min(MAX_V_SPEED, v_speed + V_ACCELERATION*delta)
+		v_speed = max(0, min(MAX_V_SPEED, v_speed + V_ACCELERATION*delta))
 	elif(Input.is_action_pressed("ui_up")):
-		v_speed = max(-MAX_V_SPEED, v_speed - V_ACCELERATION*delta)
+		v_speed = min(max(-MAX_V_SPEED, v_speed - V_ACCELERATION*delta), 0)
 	else:
 		#Slowing down
 		if(v_speed > 0):
