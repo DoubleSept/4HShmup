@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Bad Ship" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 736.866, 396.849 )
+rotation = 3.14159
+scale = Vector2( 0.533333, 0.409938 )
+invert_border = 0.1
+polygon = PoolVector2Array( 366.208, 151.12, 347.521, 181.822, 291.736, 204.825, 218.041, 235.215, 85.892, 257.907, 124.602, 188.496, 184.67, 153.79, 127.272, 116.414, 96.5707, 42.9983, 214.037, 65.6905, 338.177, 119.084 )
