@@ -4,17 +4,22 @@ var v_speed = 0.0
 const MAX_V_SPEED = 200.0
 const V_ACCELERATION = 50
 var height
+var width
 
 var shootResource = load("res://assets/Shoot.tscn")
 
 func onShoot():
+	if(rand_range(0, 1) > 0.4):
+		return 0;
+
 	var shoot = shootResource.instance()
-	shoot.position = position
+	shoot.position = position + Vector2(width, height / 2)
 	get_node(".").get_parent().add_child(shoot)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	height = 75
+	width = 125
 	print("Height ", height)
 
 func _process(delta):
