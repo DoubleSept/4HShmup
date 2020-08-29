@@ -6,7 +6,7 @@ const V_ACCELERATION = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func _process(delta):
 	#INPUT MANAGEMENT
@@ -31,6 +31,6 @@ func _process(delta):
 		position = Vector2(position[0], 0)
 		v_speed = 0
 	
-	if(position[1]>1080 - $Collision.get_shape().get_extents() && v_speed>0):
+	if(position[1]>1080 && v_speed>0):
 		position = Vector2(position[0], 1080)
 		v_speed = 0
